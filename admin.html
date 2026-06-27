@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>관리자 · OST MATCH POINT</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./admin.css" />
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <div class="container admin-header-inner">
+      <div>
+        <h1 class="admin-title">관리자 페이지</h1>
+        <p class="admin-subtitle">후보 명단 · 사진 관리 — OST MATCH POINT</p>
+      </div>
+      <a class="btn" href="./index.html">← 사이트 보기</a>
+    </div>
+  </header>
+
+  <main class="container admin-main">
+    <!-- 상단 액션 바 -->
+    <section class="admin-toolbar">
+      <div class="admin-counts">
+        <span class="count-chip">대중가수 <strong id="count-trot">0</strong>/20</span>
+        <span class="count-chip">아이돌 <strong id="count-아이돌">0</strong>/22</span>
+      </div>
+      <div class="admin-actions">
+        <button class="btn" id="btn-import" type="button">JSON 불러오기</button>
+        <input type="file" id="file-import" accept="application/json,.json,.js" hidden />
+        <button class="btn" id="btn-export" type="button">roster.js 내려받기</button>
+        <button class="btn" id="btn-reset" type="button">기본값으로 초기화</button>
+        <button class="btn btn-primary" id="btn-save" type="button">저장</button>
+      </div>
+    </section>
+
+    <p class="admin-hint" id="admin-status"></p>
+
+    <!-- 부문별 후보 목록 -->
+    <section class="admin-section">
+      <div class="admin-section-head">
+        <h2>대중가수 부문</h2>
+        <button class="btn btn-add" type="button" data-add="대중가수">+ 후보 추가</button>
+      </div>
+      <div class="cand-grid" id="grid-trot"></div>
+    </section>
+
+    <section class="admin-section">
+      <div class="admin-section-head">
+        <h2>아이돌 부문</h2>
+        <button class="btn btn-add" type="button" data-add="아이돌">+ 후보 추가</button>
+      </div>
+      <div class="cand-grid" id="grid-아이돌"></div>
+    </section>
+  </main>
+
+  <!-- 후보 카드 템플릿 -->
+  <template id="cand-template">
+    <article class="cand-card">
+      <div class="cand-thumb" data-thumb>
+        <img alt="" data-img hidden />
+        <span class="cand-thumb-empty" data-empty>사진 없음</span>
+        <label class="cand-thumb-upload">
+          사진 선택
+          <input type="file" accept="image/*" data-file hidden />
+        </label>
+      </div>
+      <div class="cand-fields">
+        <label class="cand-field">
+          <span>이름</span>
+          <input type="text" data-name placeholder="후보 이름" />
+        </label>
+        <label class="cand-field">
+          <span>부문</span>
+          <select data-group>
+            <option value="대중가수">대중가수</option>
+            <option value="아이돌">아이돌</option>
+          </select>
+        </label>
+        <label class="cand-field">
+          <span>사진 URL (선택)</span>
+          <input type="text" data-url placeholder="https://... 또는 사진 선택" />
+        </label>
+        <div class="cand-row-actions">
+          <span class="cand-id" data-id></span>
+          <button class="btn btn-danger" type="button" data-delete>삭제</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="./data/roster.js"></script>
+  <script src="./js/roster.js"></script>
+  <script src="./js/admin.js"></script>
+</body>
+</html>

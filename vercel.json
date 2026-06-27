@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin.html" }
+  ],
+  "headers": [
+    {
+      "source": "/api/scores",
+      "headers": [{ "key": "Cache-Control", "value": "s-maxage=10, stale-while-revalidate=10" }]
+    }
+  ]
+}

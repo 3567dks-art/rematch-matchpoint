@@ -1,0 +1,130 @@
+/* admin.css — 관리자 페이지 전용 (styles.css 테마 변수 재사용) */
+
+.admin-body { background: var(--bg); }
+
+.admin-header {
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, #2a0a18, var(--bg));
+  padding: 18px 0;
+}
+.admin-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.admin-title { margin: 0; font-size: 1.3rem; font-weight: 800; }
+.admin-subtitle { margin: 4px 0 0; font-size: 0.85rem; color: var(--text-muted); }
+
+.admin-main { padding-top: 22px; padding-bottom: 60px; }
+
+.admin-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.admin-counts { display: flex; gap: 10px; }
+.count-chip {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+.count-chip strong { color: var(--accent-hover); font-size: 1rem; }
+.admin-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-danger {
+  background: rgba(251, 90, 122, 0.12);
+  border-color: rgba(251, 90, 122, 0.4);
+  color: var(--danger);
+}
+.btn-danger:hover { background: rgba(251, 90, 122, 0.2); }
+.btn-add { border-style: dashed; }
+
+.admin-hint { min-height: 1.2em; font-size: 0.85rem; color: var(--ok); margin: 0 0 16px; }
+.admin-hint.warn { color: var(--warn); }
+
+.admin-section { margin-bottom: 30px; }
+.admin-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.admin-section-head h2 { margin: 0; font-size: 1.05rem; font-weight: 800; }
+
+.cand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+.cand-card {
+  display: flex;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+/* 썸네일 + 업로드 */
+.cand-thumb {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  flex: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cand-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cand-thumb-empty { font-size: 0.72rem; color: var(--text-muted); }
+.cand-thumb-upload {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  text-align: center;
+  font-size: 0.72rem;
+  padding: 4px 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  cursor: pointer;
+}
+.cand-thumb-upload:hover { background: var(--accent); }
+
+.cand-fields { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.cand-field { display: flex; flex-direction: column; gap: 3px; }
+.cand-field span { font-size: 0.72rem; color: var(--text-muted); }
+.cand-field input,
+.cand-field select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 7px 9px;
+  font-size: 0.88rem;
+  width: 100%;
+}
+.cand-field input:focus,
+.cand-field select:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+
+.cand-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+}
+.cand-id { font-size: 0.72rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.cand-row-actions .btn { padding: 6px 12px; font-size: 0.82rem; }
