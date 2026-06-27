@@ -23,11 +23,11 @@
 // 키는 운영에서 환경변수로 보관 권장. 환경변수가 없으면 아래 기본값으로 동작.
 const REMATCH = {
   baseUrl: "https://rematchVoteStats-65s5gbk6ra-uc.a.run.app/", // 쿼리: ?campaignId=
-  apiKey: process.env.REMATCH_API_KEY || "strd_rematch_b4f9e7c2a18d63f04e9b7c1a5d8e2f693ab71c4d5e8f90",
+  apiKey: process.env.REMATCH_API_KEY,
 };
 const PARTNER = {
   baseUrl: "https://api.jk-fandom.jp/v1/partner/events/2000016/votes", // 쿼리: ?department_id=
-  apiKey: process.env.PARTNER_API_KEY || "c094e663797974b224298c",
+  apiKey: process.env.PARTNER_API_KEY,
 };
 
 // 부문(투표) 정의: 리매치 campaign ↔ 타앱 department 짝.
