@@ -37,7 +37,6 @@ const VOTES = [
   { group: "트롯", rematchCampaignId: "69d89afc820f8b2282f3fbd1", partnerDepartmentId: 3000059 },
 ];
 
-
 // 게시판 출처 라벨 (프론트 참고용)
 const SOURCE_LABELS = [
   { id: "rematch", label: "리매치" },
