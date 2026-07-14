@@ -33,8 +33,8 @@ const PARTNER = {
 // 부문(투표) 정의: 리매치 campaign ↔ 타앱 department 짝.
 // group 값(KPOP/트롯)은 프론트의 GROUP_LABELS(→ 아이돌/대중가수) 탭으로 표시됨.
 const VOTES = [
-  { group: "KPOP", rematchCampaignId: "69d89a70820f8b2282f3fae6", partnerDepartmentId: 3000058 },
-  { group: "트롯", rematchCampaignId: "69d89afc820f8b2282f3fbd1", partnerDepartmentId: 3000059 },
+  { group: "KPOP", rematchCampaignId: "69d89a70820f8b2282f3fae6", partnerDepartmentId: 3000064 },
+  { group: "트롯", rematchCampaignId: "69d89afc820f8b2282f3fbd1", partnerDepartmentId: 3000065 },
 ];
 
 
